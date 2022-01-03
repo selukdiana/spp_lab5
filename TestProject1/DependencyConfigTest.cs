@@ -109,21 +109,24 @@ namespace DependencyConfigTest
             Assert.IsTrue(x.iz.GetType().Equals(typeof(Z)));
         }
 
-        //Q - W - E - Q тест
+        //M - W - L - M тест
         [Test]
         public void CircularTest2()
         {
             var dependencies = new DependencyConfig();
             var provider = new DependencyProvider(dependencies);
-            dependencies.Register<IQ, Q>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IM, M>(LifeCycle.Singleton, ImplNumber.First);
             dependencies.Register<IW, W>(LifeCycle.Singleton, ImplNumber.First);
-            dependencies.Register<IE, E>(LifeCycle.Singleton, ImplNumber.First);
-            Q q = (Q)provider.Resolve<IQ>(ImplNumber.First);
+            dependencies.Register<IL, L>(LifeCycle.Singleton, ImplNumber.First);
+            M m = (M)provider.Resolve<IM>(ImplNumber.First);
             W w = (W)provider.Resolve<IW>(ImplNumber.First);
-            E e = (E)provider.Resolve<IE>(ImplNumber.Any);
-            Assert.IsTrue(q.iw.GetType().Equals(typeof(W)));
-            Assert.IsTrue(w.ie.GetType().Equals(typeof(E)));
-            Assert.IsTrue(e.iq.GetType().Equals(typeof(Q)));
+            L l = (L)provider.Resolve<IL>(ImplNumber.Any);
+            Assert.IsTrue(m.iw.GetType().Equals(typeof(W)));
+            Assert.IsTrue(w.il.GetType().Equals(typeof(L)));
+            Assert.IsTrue(l.im.GetType().Equals(typeof(M)));
+
+            Assert.AreSame(m, w.im);
+            Assert.AreSame(l, w.il);
         }
 
         //Self - Self тест
@@ -163,6 +166,7 @@ namespace DependencyConfigTest
         {
             public IX ix { get; set; }
             public Z(IX ix)
+
             {
                 this.ix = ix;
             }
@@ -190,15 +194,15 @@ namespace DependencyConfigTest
             }
         }
 
-        interface IQ
+        interface IM
         {
             void met();
         }
 
-        class Q : IQ
+        class M : IM
         {
             public IW iw { get; set; }
-            public Q(IW iw)
+            public M(IW iw)
             {
                 this.iw = iw;
             }
@@ -216,10 +220,12 @@ namespace DependencyConfigTest
 
         class W : IW
         {
-            public IE ie { get; set; }
-            public W(IE ie)
+            public IL il { get; set; }
+            public IM im { get; set; }
+            public W(IL il, IM im)
             {
-                this.ie = ie;
+                this.il = il;
+                this.im = im;
             }
 
             public void met()
@@ -228,17 +234,17 @@ namespace DependencyConfigTest
             }
         }
 
-        interface IE
+        interface IL
         {
             void met();
         }
 
-        class E : IE
+        class L : IL
         {
-            public IQ iq { get; set; }
-            public E(IQ iq)
+            public IM im { get; set; }
+            public L(IM im)
             {
-                this.iq = iq;
+                this.im = im;
             }
 
             public void met()
