@@ -1,0 +1,41 @@
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.deps.json
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.dll
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.pdb
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.csprojAssemblyReference.cache
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.AssemblyInfoInputs.cache
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.AssemblyInfo.cs
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.csproj.CoreCompileInputs.cache
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.dll
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.pdb
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.exe
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.runtimeconfig.json
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.runtimeconfig.dev.json
+D:\smth\походу уник\spp\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.genruntimeconfig.cache
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.exe
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.deps.json
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.runtimeconfig.json
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.runtimeconfig.dev.json
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.dll
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.pdb
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.csproj.AssemblyReference.cache
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.AssemblyInfoInputs.cache
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.AssemblyInfo.cs
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.csproj.CoreCompileInputs.cache
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.dll
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.pdb
+C:\Users\diana\Desktop\spp5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.genruntimeconfig.cache
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.exe
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.deps.json
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.runtimeconfig.json
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.runtimeconfig.dev.json
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.dll
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\bin\Debug\netcoreapp3.1\DependencyInjectionContainer.pdb
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.csproj.AssemblyReference.cache
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.AssemblyInfoInputs.cache
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.AssemblyInfo.cs
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.csproj.CoreCompileInputs.cache
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.dll
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.pdb
+C:\Users\diana\source\repos\spp_lab5\DependencyInjectionContainer\obj\Debug\netcoreapp3.1\DependencyInjectionContainer.genruntimeconfig.cache
