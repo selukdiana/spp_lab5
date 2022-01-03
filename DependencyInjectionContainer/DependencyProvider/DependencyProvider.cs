@@ -9,11 +9,7 @@ namespace DependencyInjectionContainer
 {
     public class DependencyProvider
     {
-        static object locker = new object();
-        private readonly DependencyConfig _configuration;
-        public readonly Dictionary<Type, List<SingletonContainer>> _singletons;
-        private readonly Stack<Type> _recursionStack = new Stack<Type>();
-        private Dictionary<Type, Type> nullDictionary = new Dictionary<Type, Type>();
+        private readonly DependenciesConfiguration _dependencyConfiguration;
 
         private static List<object> toFill = new List<object>();
 
@@ -97,25 +93,38 @@ namespace DependencyInjectionContainer
 
         private object ResolveDependency(Dependency dependency)
         {
-            foreach (KeyValuePair<Type, Type> keyValuePair in nullDictionary)
-            {
-                if (replaceType.Equals(keyValuePair.Value))
+            object result = null;
+
+                if (_dependencyConfiguration.IsExcluded(dependency.Type))
+                    //throw new DependencyException($"Dependency type {dependency.Type} leads to recursion!");
+                    return null;
+                _dependencyConfiguration.ExcludeType(dependency.Type);
+
+                if (dependency.LifeCycle == LifeCycle.InstancePerDependency)
                 {
-                    object objectWithNull = Resolve(keyValuePair.Key, ImplNumber.Any);
-                    PropertyInfo[] propertyInfos = objectWithNull.GetType().GetProperties();
-                    for (int i = 0; i < propertyInfos.Length; i++)
+                    result = Creator.CreateInstance(dependency.Type, _dependencyConfiguration);
+                } else if (dependency.LifeCycle == LifeCycle.Singleton)
+                {
+                    lock (dependency)
                     {
-                        if (propertyInfos[i].PropertyType.Equals(keyValuePair.Value))
+                        if (dependency.Instance == null)
                         {
-                            _recursionStack.Pop();
-                            object replaceObject = Resolve(replaceType, ImplNumber.Any);
-                            Console.WriteLine(replaceObject == null);
-                            objectWithNull.GetType().GetProperty(propertyInfos[i].Name).SetValue(objectWithNull, replaceObject);
-                            break;
+                            result = Creator.CreateInstance(dependency.Type, _dependencyConfiguration);
+                            dependency.Instance = result;
+                        //singletons.Add(result);
+                        fillWithSingleton(result);
+                        }
+                        else
+                        {
+                            result = dependency.Instance;
                         }
                     }
                 }
-            }
+            toFill.Add(result);
+            //fillObjects();
+            _dependencyConfiguration.RemoveFromExcluded(dependency.Type);
+            
+            return result;
         }
 
 
