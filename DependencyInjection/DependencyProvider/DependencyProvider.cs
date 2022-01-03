@@ -79,7 +79,7 @@ namespace DependencyInjection.DependencyProvider
                         Console.WriteLine(result == null);
                         this.AddToSingletons(dependencyType, result, number);
                         _recursionStack.Pop();
-                       
+                        solveNullObjects(dependencyType);
                     }
                 }
             }
@@ -87,7 +87,28 @@ namespace DependencyInjection.DependencyProvider
                    .Find(singletonContainer => number.HasFlag(singletonContainer.ImplNumber)).Instance;
         }
 
-        
+        private void solveNullObjects(Type replaceType)
+        {
+            foreach(KeyValuePair<Type, Type> keyValuePair in nullDictionary)
+            {
+                if (replaceType.Equals(keyValuePair.Value))
+                {
+                    object objectWithNull = Resolve(keyValuePair.Key, ImplNumber.Any);
+                    PropertyInfo[] propertyInfos = objectWithNull.GetType().GetProperties();
+                    for(int i = 0; i < propertyInfos.Length; i++)
+                    {
+                        if (propertyInfos[i].PropertyType.Equals(keyValuePair.Value)){
+                            _recursionStack.Pop();
+                            object replaceObject = Resolve(replaceType, ImplNumber.Any);
+                            Console.WriteLine(replaceObject == null);
+                            objectWithNull.GetType().GetProperty(propertyInfos[i].Name).SetValue(objectWithNull, replaceObject);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
         private object CreateInstance( Type dependecyType, Type implementationType)
         {
             var constructors = implementationType.GetConstructors(BindingFlags.Instance | BindingFlags.Public);

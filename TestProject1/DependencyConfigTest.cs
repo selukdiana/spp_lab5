@@ -95,7 +95,19 @@ namespace DependencyConfigTest
         }
 
 
-        
+        // Z - X - Z тест
+        [Test]
+        public void CircularTest1()
+        {
+            var dependencies = new DependencyConfig();
+            var provider = new DependencyProvider(dependencies);
+            dependencies.Register<IZ, Z>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IX, X>(LifeCycle.Singleton, ImplNumber.First);
+            Z z = (Z)provider.Resolve<IZ>(ImplNumber.First);
+            X x = (X)provider.Resolve<IX>(ImplNumber.First);
+            Assert.IsTrue(z.ix.GetType().Equals(typeof(X)));
+            Assert.IsTrue(x.iz.GetType().Equals(typeof(Z)));
+        }
 
         //Q - W - E - Q тест
         [Test]
