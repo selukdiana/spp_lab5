@@ -41,9 +41,11 @@ namespace DependencyInjection.DependencyProvider
 
             if (_recursionStack.Contains(dependencyType))
             {
+                Console.WriteLine("Return null");
                 return null;
             }
 
+            Console.WriteLine("RECURSION PUSH: " + dependencyType);
             _recursionStack.Push(dependencyType);
 
             object result;
@@ -57,7 +59,8 @@ namespace DependencyInjection.DependencyProvider
                 Type requiredType = GetGeneratedType(dependencyType, container.ImplementationsType);
                 result = this.ResolveNonIEnumerable(requiredType, container.TimeToLive, dependencyType, container.ImplNumber);
             }
-
+            Console.WriteLine("RECURSION POP: " + _recursionStack.Peek());
+            _recursionStack.Pop();
             return result;
         }
 
@@ -66,7 +69,7 @@ namespace DependencyInjection.DependencyProvider
         {
             if (ttl != LifeCycle.Singleton)
             {
-                return CreateInstance(dependencyType,implType);
+                return CreateInstance(dependencyType, implType);
             }
 
             if (!IsInSingletons(dependencyType, implType, number))
@@ -75,32 +78,35 @@ namespace DependencyInjection.DependencyProvider
                 {
                     if (!IsInSingletons(dependencyType, implType, number))
                     {
-                        var result = CreateInstance(dependencyType,implType);
-                        Console.WriteLine(result == null);
+                        var result = CreateInstance(dependencyType, implType);
                         this.AddToSingletons(dependencyType, result, number);
-                        _recursionStack.Pop();
-                        
+                        Console.WriteLine("Solve: " + dependencyType);
+                        solveNullObjects(dependencyType, number);
                     }
                 }
             }
-            solveNullObjects(dependencyType);
+            Console.WriteLine("Finding in singletones: " + dependencyType);
             return this._singletons[dependencyType]
                    .Find(singletonContainer => number.HasFlag(singletonContainer.ImplNumber)).Instance;
         }
 
-        private void solveNullObjects(Type replaceType)
+        private void solveNullObjects(Type replaceType, ImplNumber number)
         {
-            foreach(KeyValuePair<Type, Type> keyValuePair in nullDictionary)
+            foreach (KeyValuePair<Type, Type> keyValuePair in nullDictionary)
             {
+                Console.WriteLine("[" + keyValuePair.Key + " " + keyValuePair.Value + "]");
                 if (replaceType.Equals(keyValuePair.Value))
                 {
-                    object objectWithNull = Resolve(keyValuePair.Key, ImplNumber.Any);
+                    Console.WriteLine("IN IF");
+                    object objectWithNull = Resolve(keyValuePair.Key, ImplNumber.First);
                     PropertyInfo[] propertyInfos = objectWithNull.GetType().GetProperties();
-                    for(int i = 0; i < propertyInfos.Length; i++)
+                    for (int i = 0; i < propertyInfos.Length; i++)
                     {
-                        if (propertyInfos[i].PropertyType.Equals(keyValuePair.Value)){
-                            _recursionStack.Pop();
-                            object replaceObject = Resolve(replaceType, ImplNumber.Any);
+                        Console.WriteLine("PROP: " + propertyInfos[i].PropertyType);
+                        if (propertyInfos[i].PropertyType.Equals(keyValuePair.Value))
+                        {
+                            object replaceObject = this._singletons[replaceType]
+                   .Find(singletonContainer => number.HasFlag(singletonContainer.ImplNumber)).Instance; //Resolve(replaceType, ImplNumber.First);
                             Console.WriteLine(replaceObject == null);
                             objectWithNull.GetType().GetProperty(propertyInfos[i].Name).SetValue(objectWithNull, replaceObject);
                             break;
@@ -110,7 +116,7 @@ namespace DependencyInjection.DependencyProvider
             }
         }
 
-        private object CreateInstance( Type dependecyType, Type implementationType)
+        private object CreateInstance(Type dependecyType, Type implementationType)
         {
             var constructors = implementationType.GetConstructors(BindingFlags.Instance | BindingFlags.Public);
             foreach (var constructor in constructors)
@@ -122,14 +128,15 @@ namespace DependencyInjection.DependencyProvider
                     dynamic parameter;
                     if (parameterInfo.ParameterType.IsInterface)
                     {
-                        var number = parameterInfo.GetCustomAttribute<DependencyKeyAttribute>()?.ImplNumber ?? ImplNumber.Any;
+                        var number = parameterInfo.GetCustomAttribute<DependencyKeyAttribute>()?.ImplNumber ?? ImplNumber.First;
                         parameter = Resolve(parameterInfo.ParameterType, number);
-                        if(parameter == null)
+                        if (parameter == null)
                         {
-                            if (!nullDictionary.ContainsKey(dependecyType))
-                            {
-                                nullDictionary.Add(dependecyType, parameterInfo.ParameterType);
-                            }
+                            //if (!nullDictionary.ContainsKey(dependecyType))
+                            //{
+                            Console.WriteLine("Added to nullable: " + dependecyType + " " + parameterInfo.ParameterType);
+                            nullDictionary.Add(dependecyType, parameterInfo.ParameterType);
+                            // }
                         }
                     }
                     else
@@ -140,6 +147,7 @@ namespace DependencyInjection.DependencyProvider
                     generatedParams.Add(parameter);
                 }
 
+                Console.WriteLine("Created instance of :" + implementationType);
                 return constructor.Invoke(generatedParams.ToArray());
             }
 
@@ -212,6 +220,7 @@ namespace DependencyInjection.DependencyProvider
             }
             else
             {
+                Console.WriteLine("Added to singletones:" + implementation);
                 this._singletons.Add(dependencyType, new List<SingletonContainer>()
                 {
                     new SingletonContainer(implementation, number)

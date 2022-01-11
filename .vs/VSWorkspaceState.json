@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DependencyInjection",
+    "\\DependencyInjection\\DependencyProvider"
   ],
-  "SelectedNode": "\\DependencyInjectionContainer.sln",
+  "SelectedNode": "\\DependencyInjection\\DependencyProvider\\DependencyProvider.cs",
   "PreviewInSolutionExplorer": false
 }
