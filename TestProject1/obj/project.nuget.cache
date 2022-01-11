@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QK7iIrnY1Fu7J7N9AfVzUj3t01u5zpVKtGhjLKsTITvOW6WFr4vhFDUH+3MF1e+aYHbKpC2E5giPHcQAQlnSNg==",
+  "dgSpecHash": "9LO2Vu2PHD+cO4h3k98DYmQKZpmlyRdcPVVxPWG7c0Q5Gu5Tv76a10lXafq6wTmiFN5uhKmzzc//wtK0J2BQbg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\diana\\source\\repos\\spp_lab5\\TestProject1\\TestProject1.csproj",
+  "projectFilePath": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\TestProject1\\TestProject1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diana\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\diana\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",

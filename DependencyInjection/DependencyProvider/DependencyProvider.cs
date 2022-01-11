@@ -79,10 +79,11 @@ namespace DependencyInjection.DependencyProvider
                         Console.WriteLine(result == null);
                         this.AddToSingletons(dependencyType, result, number);
                         _recursionStack.Pop();
-                        solveNullObjects(dependencyType);
+                        
                     }
                 }
             }
+            solveNullObjects(dependencyType);
             return this._singletons[dependencyType]
                    .Find(singletonContainer => number.HasFlag(singletonContainer.ImplNumber)).Instance;
         }

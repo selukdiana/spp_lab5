@@ -1,0 +1,12 @@
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\bin\Debug\net5.0\DependencyInjection.deps.json
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\bin\Debug\net5.0\DependencyInjection.dll
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\bin\Debug\net5.0\ref\DependencyInjection.dll
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\bin\Debug\net5.0\DependencyInjection.pdb
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\obj\Debug\net5.0\DependencyInjection.csproj.AssemblyReference.cache
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\obj\Debug\net5.0\DependencyInjection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\obj\Debug\net5.0\DependencyInjection.AssemblyInfoInputs.cache
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\obj\Debug\net5.0\DependencyInjection.AssemblyInfo.cs
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\obj\Debug\net5.0\DependencyInjection.csproj.CoreCompileInputs.cache
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\obj\Debug\net5.0\DependencyInjection.dll
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\obj\Debug\net5.0\ref\DependencyInjection.dll
+C:\Users\diana\Source\Repos\spp_lab55\DependencyInjection\obj\Debug\net5.0\DependencyInjection.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\diana\\source\\repos\\spp_lab5\\TestProject1\\TestProject1.csproj": {}
+    "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\TestProject1\\TestProject1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\diana\\source\\repos\\spp_lab5\\DependencyInjection\\DependencyInjection.csproj": {
+    "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\DependencyInjection\\DependencyInjection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\diana\\source\\repos\\spp_lab5\\DependencyInjection\\DependencyInjection.csproj",
+        "projectUniqueName": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\DependencyInjection\\DependencyInjection.csproj",
         "projectName": "DependencyInjection",
-        "projectPath": "C:\\Users\\diana\\source\\repos\\spp_lab5\\DependencyInjection\\DependencyInjection.csproj",
+        "projectPath": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\DependencyInjection\\DependencyInjection.csproj",
         "packagesPath": "C:\\Users\\diana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\diana\\source\\repos\\spp_lab5\\DependencyInjection\\obj\\",
+        "outputPath": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\DependencyInjection\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\diana\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,14 +64,14 @@
         }
       }
     },
-    "C:\\Users\\diana\\source\\repos\\spp_lab5\\TestProject1\\TestProject1.csproj": {
+    "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\TestProject1\\TestProject1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\diana\\source\\repos\\spp_lab5\\TestProject1\\TestProject1.csproj",
+        "projectUniqueName": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\TestProject1\\TestProject1.csproj",
         "projectName": "TestProject1",
-        "projectPath": "C:\\Users\\diana\\source\\repos\\spp_lab5\\TestProject1\\TestProject1.csproj",
+        "projectPath": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\TestProject1\\TestProject1.csproj",
         "packagesPath": "C:\\Users\\diana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\diana\\source\\repos\\spp_lab5\\TestProject1\\obj\\",
+        "outputPath": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\TestProject1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\diana\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -88,8 +88,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\diana\\source\\repos\\spp_lab5\\DependencyInjection\\DependencyInjection.csproj": {
-                "projectPath": "C:\\Users\\diana\\source\\repos\\spp_lab5\\DependencyInjection\\DependencyInjection.csproj"
+              "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\DependencyInjection\\DependencyInjection.csproj": {
+                "projectPath": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\DependencyInjection\\DependencyInjection.csproj"
               }
             }
           }
