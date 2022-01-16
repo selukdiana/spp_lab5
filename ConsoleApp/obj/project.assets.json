@@ -5124,11 +5124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\ConsoleApp\\ConsoleApp.csproj",
+      "projectUniqueName": "C:\\Users\\diana\\source\\repos\\spp_lab55\\ConsoleApp\\ConsoleApp.csproj",
       "projectName": "ConsoleApp",
-      "projectPath": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\ConsoleApp\\ConsoleApp.csproj",
+      "projectPath": "C:\\Users\\diana\\source\\repos\\spp_lab55\\ConsoleApp\\ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\diana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\ConsoleApp\\obj\\",
+      "outputPath": "C:\\Users\\diana\\source\\repos\\spp_lab55\\ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\diana\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5145,8 +5145,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\DependencyInjection\\DependencyInjection.csproj": {
-              "projectPath": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\DependencyInjection\\DependencyInjection.csproj"
+            "C:\\Users\\diana\\source\\repos\\spp_lab55\\DependencyInjection\\DependencyInjection.csproj": {
+              "projectPath": "C:\\Users\\diana\\source\\repos\\spp_lab55\\DependencyInjection\\DependencyInjection.csproj"
             }
           }
         }

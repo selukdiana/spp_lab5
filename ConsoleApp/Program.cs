@@ -1,5 +1,4 @@
-﻿
-using DependencyInjection.DependencyConfiguration;
+﻿using DependencyInjection.DependencyConfiguration;
 using DependencyInjection.DependencyConfiguration.ImplementationData;
 using DependencyInjection.DependencyProvider;
 using LifeCycle = DependencyInjection.DependencyConfiguration.ImplementationData.LifeCycle;
@@ -17,17 +16,20 @@ namespace ConsoleApp
         {
             var dependencies = new DependencyConfig();
             var provider = new DependencyProvider(dependencies);
-            dependencies.Register<IA, A>(LifeCycle.Singleton, ImplNumber.First);
+            // dependencies.Register<IA, A>(LifeCycle.Singleton, ImplNumber.First);
             dependencies.Register<IB, B>(LifeCycle.Singleton, ImplNumber.First);
             dependencies.Register<IC, C>(LifeCycle.Singleton, ImplNumber.First);
-            A a = (A)provider.Resolve<IA>(ImplNumber.First);
-            B b = (B)provider.Resolve<IB>(ImplNumber.First);
-            C c = (C)provider.Resolve<IC>(ImplNumber.First);
-
+            //A a = (A)provider.Resolve<IA>(ImplNumber.First);
+            //B b = (B)provider.Resolve<IB>(ImplNumber.First);
+            //C c = (C)provider.Resolve<IC>(ImplNumber.First);
+            A a = (A)provider.Resolve<A>(ImplNumber.First);
             Console.WriteLine(a.ib);
             Console.WriteLine(a.ic);
-            Console.WriteLine(b.ic);
-            Console.WriteLine(c.ia);
+
+            //Console.WriteLine(a.ib);
+            //Console.WriteLine(a.ic);
+            //Console.WriteLine(b.ic);
+            //Console.WriteLine(c.ia);
 
 
         }

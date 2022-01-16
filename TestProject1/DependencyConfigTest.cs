@@ -1,4 +1,4 @@
-using NUnit.Framework;
+ï»¿using NUnit.Framework;
 using DependencyInjection.DependencyConfiguration;
 using DependencyInjection.DependencyConfiguration.ImplementationData;
 using DependencyInjection.DependencyProvider;
@@ -82,11 +82,11 @@ namespace DependencyConfigTest
             Assert.IsFalse(link1 == link2);
         }
 
-       
+
         [Test]
         public void SingletoneTest()
         {
-           var dependencies = new DependencyConfig();
+            var dependencies = new DependencyConfig();
             var provider = new DependencyProvider(dependencies);
             dependencies.Register<IInterface, Class1>(LifeCycle.Singleton, ImplNumber.First);
             IInterface link1 = provider.Resolve<IInterface>(ImplNumber.First);
@@ -95,7 +95,7 @@ namespace DependencyConfigTest
         }
 
 
-        // Z - X - Z òåñò
+        // Z - X - Z Ã²Ã¥Ã±Ã²
         [Test]
         public void CircularTest1()
         {
@@ -109,7 +109,7 @@ namespace DependencyConfigTest
             Assert.IsTrue(x.iz.GetType().Equals(typeof(Z)));
         }
 
-        //Q - W - E - Q òåñò
+        //Q - W - E - Q Ã²Ã¥Ã±Ã²
         [Test]
         public void CircularTest2()
         {
@@ -124,13 +124,60 @@ namespace DependencyConfigTest
             Assert.IsTrue(q.iw.GetType().Equals(typeof(W)));
             Assert.IsTrue(w.ie.GetType().Equals(typeof(E)));
             Assert.IsTrue(e.iq.GetType().Equals(typeof(Q)));
-
-            Assert.AreEqual(q, w.iq);
-            Assert.AreEqual(e, w.ie);
         }
 
+        [Test]
+        public void ClassProviderTest()
+        {
+            var dependencies = new DependencyConfig();
+            var provider = new DependencyProvider(dependencies);
+            dependencies.Register<IQ, Q>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IW, W>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IE, E>(LifeCycle.Singleton, ImplNumber.First);
+            Q q = (Q)provider.Resolve<Q>(ImplNumber.First);
+            Assert.IsNotNull(q);
+            Assert.IsNotNull(q.iw);
+        }
+        [Test]
+        public void ClassProviderWrongTest()
+        {
+            var dependencies = new DependencyConfig();
+            var provider = new DependencyProvider(dependencies);
+            Assert.Throws<System.ArgumentException>(() => provider.Resolve<Q>(ImplNumber.First));
+        }
+        [Test]
+        public void ClassProviderManyImplementaionsTest()
+        {
+            var dependencies = new DependencyConfig();
+            var provider = new DependencyProvider(dependencies);
+            dependencies.Register<IQ, Q>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IQQ, Q>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IQQQ, Q>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IW, W>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IE, E>(LifeCycle.Singleton, ImplNumber.First);
+            Q q = (Q)provider.Resolve<Q>(ImplNumber.First);
+            Assert.IsNotNull(q);
+            Assert.IsNotNull(q.iw);
+        }
 
-       
+        [Test]
+        public void ClassProviderSingletoneObjectsTest()
+        {
+            var dependencies = new DependencyConfig();
+            var provider = new DependencyProvider(dependencies);
+            dependencies.Register<IQ, Q>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IQQ, Q>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IQQQ, Q>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IW, W>(LifeCycle.Singleton, ImplNumber.First);
+            dependencies.Register<IE, E>(LifeCycle.Singleton, ImplNumber.First);
+            Q q = (Q)provider.Resolve<Q>(ImplNumber.First);
+            W w = (W)provider.Resolve<IW>(ImplNumber.First);
+            E e = (E)provider.Resolve<IE>(ImplNumber.Any);
+            Assert.AreSame(q, e.iq);
+            Assert.AreSame(e, w.ie);
+            Assert.AreSame(w, q.iw);
+        }
+
         interface IZ
         {
             void met();
@@ -172,7 +219,17 @@ namespace DependencyConfigTest
             void met();
         }
 
-        class Q : IQ
+        interface IQQ
+        {
+            void mett();
+        }
+
+        interface IQQQ
+        {
+            void mettt();
+        }
+
+        class Q : IQ, IQQ, IQQQ
         {
             public IW iw { get; set; }
             public Q(IW iw)
@@ -181,6 +238,16 @@ namespace DependencyConfigTest
             }
 
             public void met()
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void mett()
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void mettt()
             {
                 throw new System.NotImplementedException();
             }
@@ -194,10 +261,8 @@ namespace DependencyConfigTest
         class W : IW
         {
             public IE ie { get; set; }
-            public IQ iq { get; set; }
-            public W(IQ iq, IE ie)
+            public W(IE ie)
             {
-                this.iq = iq;
                 this.ie = ie;
             }
 
@@ -251,7 +316,7 @@ namespace DependencyConfigTest
             void met();
         }
 
-        class B: IB
+        class B : IB
         {
             IA ia;
             public B(IA ia)

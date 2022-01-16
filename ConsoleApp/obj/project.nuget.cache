@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vRYGNYTunWGF9QOuLgvWFT4FbcAzchnG5loy+SL0Lb1ueoIQmkqxfrIf1mJtX8WUUDmsTwz/YA7zy5VwSQoZ+g==",
+  "dgSpecHash": "LAYrDp62eVucl+8MV2fJ3qF+uxCLML936I7yi1ljfmXz6iUu3RFMVXahoJ6hsjpD9FqgPMAaUAW0eXnu5KPA2w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\ConsoleApp\\ConsoleApp.csproj",
+  "projectFilePath": "C:\\Users\\diana\\source\\repos\\spp_lab55\\ConsoleApp\\ConsoleApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diana\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\diana\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VfaEwE0vYiMUSYtCDhX0GHSHCNYDzikk0qFqPvDgeM7/D1YKU5MHZm/Fe6sLJYKAsjDEZpdU3NpT2VM2izt+hg==",
+  "dgSpecHash": "LDjPwaa8zSpRjMfh3smT8kT1pgWvllf+ExLhAxGVgrqR9SfT3h13e75bcbJw1tPT66fMhjNYkQzKi0gLwDCR8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\diana\\Source\\Repos\\spp_lab55\\DependencyInjection\\DependencyInjection.csproj",
+  "projectFilePath": "C:\\Users\\diana\\source\\repos\\spp_lab55\\DependencyInjection\\DependencyInjection.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diana\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\diana\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
